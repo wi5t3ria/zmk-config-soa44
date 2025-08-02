@@ -96,10 +96,6 @@
         full-ohms = <(470000 + 150000)>;
     };
 
-    rgb_led_widget {
-        compatible = "zmk,rgb-led-widget";
-        led = <&xiao_led>;
-    };
 };
 
 &adc {
