@@ -1,0 +1,8 @@
+file_format: "1"
+id: soa44
+name: SOA44
+type: shield
+url: https://github.com/gohanda11/zmk-config-soa44
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
