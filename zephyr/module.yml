@@ -1,5 +1,5 @@
 name: soa44
 build:
   settings:
-    board_root: boards
-    shield_root: boards
+    board_root: .
+    shield_root: .
