@@ -12,8 +12,6 @@
 &trackball {
     automouse-layer = <1>;
     scroll-layers = <5>;
-    automouse-threshold = <80>;
-    automouse-layer-timeout-ms = <600>;
 
     // arrows {
     //     layers = <3>;
