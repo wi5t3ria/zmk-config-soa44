@@ -94,11 +94,8 @@
         compatible = "zmk,battery-voltage-divider";
         io-channels = <&adc 0>;
         power-gpios; // unset
-        // Ni-MH to Li-ion voltage scaling: 1100-1400mV -> 3400-4200mV
-        // Scale factor: 2.67, Offset: 463mV
-        // Adjusted divider to scale Ni-MH voltage to Li-ion equivalent
-        output-ohms = <200000>;  // Adjusted for 50% range mapping
-        full-ohms = <(600000 + 200000)>;
+        output-ohms = <150000>;
+        full-ohms = <(470000 + 150000)>;
     };
 
 };
