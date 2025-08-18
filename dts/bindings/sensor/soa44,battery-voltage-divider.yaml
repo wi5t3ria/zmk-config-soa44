@@ -1,9 +1,9 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-description: Battery SoC monitoring using voltage divider
+description: Battery SoC monitoring using voltage divider with custom thresholds
 
-compatible: "zmk,battery-voltage-divider"
+compatible: "soa44,battery-voltage-divider"
 
 include: voltage-divider.yaml
 

@@ -1,0 +1,10 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SOA44_BATTERY_VOLTAGE_DIVIDER
+    bool "SOA44 Battery voltage divider"
+    depends on ADC
+    depends on ZMK_BATTERY
+    default y
+    help
+      Custom battery voltage divider driver with mv-to-pct-thresholds support
