@@ -91,13 +91,11 @@
     };
 
     vbatt: vbatt {
-        compatible = "soa44,battery-voltage-divider";
+        compatible = "zmk,battery-voltage-divider";
         io-channels = <&adc 0>;
         power-gpios; // unset
         output-ohms = <470000>;
         full-ohms = <(1000000 + 470000)>;
-        // For Ni-Mh 1U battery voltage thresholds
-        mv-to-pct-thresholds = <1100 1150 1200 1220 1240 1260 1280 1300 1320 1350 1400>;
     };
 
 };
