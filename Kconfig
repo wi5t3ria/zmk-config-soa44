@@ -5,6 +5,6 @@ config SOA44_BATTERY_VOLTAGE_DIVIDER
     bool "SOA44 Battery voltage divider"
     depends on ADC
     depends on ZMK_BATTERY
-    default y
+    default $(dt_has_compat,soa44$(comma)battery-voltage-divider)
     help
       Custom battery voltage divider driver with mv-to-pct-thresholds support

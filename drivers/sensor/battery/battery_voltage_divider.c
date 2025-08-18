@@ -13,6 +13,10 @@
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/logging/log.h>
 
+#ifdef CONFIG_ADC_NRFX_SAADC
+#include <hal/nrf_saadc.h>
+#endif
+
 #include "battery_common.h"
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
@@ -120,22 +124,22 @@ static int bvd_init(const struct device *dev) {
         }
     }
 
-    *drv_data = (struct bvd_data){
-        .adc = drv_data->adc,
-        .acc = {
-            .gain = ADC_GAIN_1_6,
-            .reference = ADC_REF_INTERNAL,
-            .acquisition_time = ADC_ACQ_TIME_DEFAULT,
-            .channel_id = drv_cfg->io_channel.channel,
-            .input_positive = SAADC_CH_PSELP_PSELP_AnalogInput0 + drv_cfg->io_channel.channel,
-        },
-        .as = {
-            .buffer = &drv_data->value.adc_raw,
-            .buffer_size = sizeof(drv_data->value.adc_raw),
-            .resolution = 12,
-            .channels = BIT(drv_cfg->io_channel.channel),
-            .calibrate = true,
-        },
+    drv_data->acc = (struct adc_channel_cfg){
+        .gain = ADC_GAIN_1_6,
+        .reference = ADC_REF_INTERNAL,
+        .acquisition_time = ADC_ACQ_TIME_DEFAULT,
+        .channel_id = drv_cfg->io_channel.channel,
+#ifdef CONFIG_ADC_NRFX_SAADC
+        .input_positive = NRF_SAADC_INPUT_AIN0 + drv_cfg->io_channel.channel,
+#endif
+    };
+
+    drv_data->as = (struct adc_sequence){
+        .buffer = &drv_data->value.adc_raw,
+        .buffer_size = sizeof(drv_data->value.adc_raw),
+        .resolution = 12,
+        .channels = BIT(drv_cfg->io_channel.channel),
+        .calibrate = true,
     };
 
     adc_channel_setup(drv_data->adc, &drv_data->acc);

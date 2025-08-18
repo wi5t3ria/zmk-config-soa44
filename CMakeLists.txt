@@ -1,4 +1,6 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-add_subdirectory(drivers)
+if(CONFIG_SOA44_BATTERY_VOLTAGE_DIVIDER)
+  add_subdirectory(drivers)
+endif()

@@ -3,3 +3,5 @@ build:
   settings:
     board_root: .
     dts_root: .
+  kconfig: Kconfig
+  cmake: CMakeLists.txt

@@ -1,0 +1,2 @@
+# Vendor prefixes for SOA44 keyboard project
+soa44	SOA44 Keyboard Project
