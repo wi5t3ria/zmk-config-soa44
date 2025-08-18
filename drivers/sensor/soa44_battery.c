@@ -13,6 +13,10 @@
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/logging/log.h>
 
+#ifdef CONFIG_ADC_NRFX_SAADC
+#include <nrfx_saadc.h>
+#endif
+
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 struct io_channel_config {
@@ -148,7 +152,7 @@ static int battery_init(const struct device *dev) {
         .acquisition_time = ADC_ACQ_TIME_DEFAULT,
         .channel_id = drv_cfg->io_channel.channel,
 #ifdef CONFIG_ADC_NRFX_SAADC
-        .input_positive = NRF_SAADC_INPUT_AIN0 + drv_cfg->io_channel.channel,
+        .input_positive = NRFX_SAADC_INPUT_AIN0 + drv_cfg->io_channel.channel,
 #endif
     };
 
