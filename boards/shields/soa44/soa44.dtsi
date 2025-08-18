@@ -91,11 +91,7 @@
     };
 
     vbatt: vbatt {
-        compatible = "zmk,battery-voltage-divider";
-        io-channels = <&adc 0>;
-        power-gpios; // unset
-        output-ohms = <470000>;
-        full-ohms = <(1000000 + 470000)>;
+        compatible = "zmk,battery-nrf-vddh";
     };
 
 };
