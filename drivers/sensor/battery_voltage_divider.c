@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#define DT_DRV_COMPAT zmk_battery_voltage_divider
+#define DT_DRV_COMPAT soa44_battery_voltage_custom
 
 #include <zephyr/device.h>
 #include <zephyr/devicetree.h>

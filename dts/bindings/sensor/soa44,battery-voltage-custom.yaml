@@ -1,6 +1,6 @@
-description: ZMK battery voltage divider sensor with custom thresholds
+description: SOA44 battery voltage divider sensor with custom thresholds
 
-compatible: "zmk,battery-voltage-divider"
+compatible: "soa44,battery-voltage-custom"
 
 properties:
   io-channels:
