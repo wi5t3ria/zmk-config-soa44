@@ -94,10 +94,8 @@
         compatible = "zmk,battery-voltage-divider";
         io-channels = <&adc 0>;
         power-gpios; // unset
-        output-ohms = <470000>;
-        full-ohms = <(1000000 + 470000)>;
-        // Ni-MH battery voltage to percentage thresholds
-        mv-to-pct-thresholds = <1100 1150 1200 1250 1300 1350 1400>;
+        output-ohms = <10000>;
+        full-ohms = <30000>;
     };
 
 };
