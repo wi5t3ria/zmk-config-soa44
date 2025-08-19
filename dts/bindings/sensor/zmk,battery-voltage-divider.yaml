@@ -1,0 +1,32 @@
+description: ZMK battery voltage divider sensor with custom thresholds
+
+compatible: "zmk,battery-voltage-divider"
+
+properties:
+  io-channels:
+    type: phandle-array
+    required: true
+    description: ADC IO channel to use for battery voltage measurement
+    
+  power-gpios:
+    type: phandle-array
+    description: GPIO to enable/disable the voltage divider power
+    
+  output-ohms:
+    type: int
+    required: true
+    description: Output resistance of the voltage divider in ohms
+    
+  full-ohms:
+    type: int
+    required: true
+    description: Full resistance of the voltage divider in ohms
+    
+  mv-to-pct-thresholds:
+    type: array
+    description: |
+      Array of millivolt thresholds for battery percentage calculation.
+      Values should be in descending order (highest voltage first).
+      Each value corresponds to a percentage from 100% down to 0%.
+      Example: <1400 1350 1300 1250 1200 1150 1100> creates 6 steps:
+      1400mV=100%, 1350mV=83%, 1300mV=67%, 1250mV=50%, 1200mV=33%, 1150mV=17%, 1100mV=0%

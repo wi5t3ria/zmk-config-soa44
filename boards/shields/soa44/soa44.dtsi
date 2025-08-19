@@ -96,8 +96,8 @@
         power-gpios; // unset
         output-ohms = <470000>;
         full-ohms = <(1000000 + 470000)>;
-        // Ni-MH battery voltage to percentage thresholds
-        mv-to-pct-thresholds = <1100 1150 1200 1250 1300 1350 1400>;
+        // Ni-MH battery voltage thresholds (descending order: 100% to 0%)
+        mv-to-pct-thresholds = <1400 1350 1300 1250 1200 1150 1100>;
     };
 
 };
