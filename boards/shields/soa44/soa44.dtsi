@@ -93,7 +93,6 @@
     vbatt: vbatt {
         compatible = "zmk,non-lipo-battery";
         io-channels = <&adc 0>;
-        power-gpios; // unset
     };
 
 };
