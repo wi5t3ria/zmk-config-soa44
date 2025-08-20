@@ -5,9 +5,9 @@ on:
   # push時に自動で実行する場合は、以下のコメントアウトを外す
   # push:
   #   paths:
-  #     - "config/roBa.keymap"
+  #     - "config/soa44.keymap"
   #     - "keymap_drawer.config.yaml"
-  #     - "config/roBa.dtsi"
+  #     - "boards/shields/soa44/soa44.dtsi"
 
 jobs:
   draw:
@@ -15,7 +15,7 @@ jobs:
     permissions:
       contents: write
     with:
-      commit_message: "[Draw] ${{ github.event.head_commit.message || 'Update keymap drawing' }}"
+      commit_message: "${{ github.event.head_commit.message || 'Update keymap drawing' }}"
       amend_commit: false
       keymap_patterns: "config/*.keymap"
       json_path: "config"
