@@ -1,20 +1,36 @@
-# SOA44 ZMK Configuration
+# SOA44 ZMK設定
 
-Split keyboard configuration for SOA44 with trackball support.
+トラックボール搭載SOA44分割キーボードのZMK設定ファイル
 
-## Keymap
+## 機能
 
-![Keymap Image](keymap-drawer/soa44.svg)
+- 44キー分割エルゴノミックレイアウト
+- PMW3610トラックボール統合
+- ニッケル水素電池対応（カスタム電圧管理）
+- Bluetooth接続性能向上（+8dBm出力）
+- zmk-rgbled-widgetによるRGB LEDレイヤー表示
+- ZMK Studio対応
 
-## Features
+## RGB LED設定
 
-- 44-key split ergonomic layout
-- PMW3610 trackball integration
-- Ni-MH battery support with custom voltage management
-- Enhanced Bluetooth connectivity (+8dBm power)
-- RGB LED layer indicators
-- ZMK Studio compatibility
+この設定では[zmk-rgbled-widget](https://github.com/gohanda11/zmk-rgbled-widget)ドライバーを使用して、RGB LEDによる視覚的なステータス表示を実現しています。このウィジェットは3種類のインジケーターを提供します：
 
-## Build
+### レイヤー表示
+- **色ベースのレイヤー表示**: 各レイヤーに固有の色を割り当て、そのレイヤーがアクティブな間、色が表示され続けます
+- **レイヤー色の設定**: 
+  - レイヤー 0 (Default): 黒 (0)
+  - レイヤー 1 (Mouse): 赤 (1)
+  - レイヤー 2 (Function): 緑 (2)
+  - レイヤー 3 (Number): 黄 (3)
+  - レイヤー 4 (Arrow): 青 (4)
+  - レイヤー 5 (Scroll): マゼンタ (5)
+  - レイヤー 6 (Bluetooth): シアン (6)
 
-Use GitHub Actions or build locally with ZMK.
+### ステータス表示
+電源ON時のステータス表示：
+- **バッテリーステータス**: バッテリーレベルの表示（緑/黄/赤）
+- **接続ステータス**: Bluetooth接続状態（青=接続中、黄=アドバタイジング、赤=切断）
+
+## キーマップ
+
+![キーマップ](keymap-drawer/soa44.svg)
