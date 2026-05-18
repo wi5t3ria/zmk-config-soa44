@@ -67,7 +67,7 @@
 &kp TAB         &kp Q         &kp W         &kp E     &kp R        &kp T         &kp Y      &kp U                   &kp I  &kp O      &kp P          &kp BACKSPACE
 &kp LCTRL       &kp A         &kp S         &kp D     &kp F        &kp G         &kp H      &kp J                   &kp K  &kp L      &kp SEMICOLON  &kp SQT
 &kp LEFT_SHIFT  &kp Z         &kp X         &kp C     &kp V        &kp B         &kp SLASH  &kp N                   &kp M  &kp COMMA  &kp DOT        &kp RIGHT_SHIFT
-                &kp LEFT_ALT  &kp LEFT_GUI  &mkp MB1  &lt 3 SPACE  &lt 1 ESCAPE  &kp ENTER  &mt LEFT_GUI BACKSPACE                    &kp LEFT_ALT
+                &kp LEFT_ALT  &kp LEFT_GUI  &mkp MB1  &lt 3 SPACE  &lt 5 ESCAPE  &kp ENTER  &mt LEFT_GUI BACKSPACE                    &kp LEFT_ALT
             >;
         };
 
